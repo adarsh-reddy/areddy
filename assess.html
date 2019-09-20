@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+		function passval() 
+		{
+			var result;
+			var a=document.getElementById("xy").value;
+			var b=document.getElementById("ab").value;
+			var string=document.getElementById("xy").value;
+			if(string.match(/[a-z]/g) && string.match(/[A-Z]/g) && string.match(/[0-9]/g) && string.match(
+				/[a-zA-Z]/g) && string.match(/[^a-zA-Z\d]/g) && string.length>=6)
+			{
+				document.location.href="task4.html"
+			}
+			else
+			{
+				alert("password is invalid")
+			}
+			if(a!==b)
+			{
+				alert("password do not match")
+			}
+		}
+	</script>
+	<script type="text/javascript">
+		var contry=['Graduate','Post-Graduate'];
+		var state=[['B.tech','B.Sc'],['M.Tech','M.Sc']];
+		function filldd()
+		{
+			var typedd=document.getElementById("contry");
+			for(i=0;i<contry.length;i++)
+			{
+				var ele=document.createElement('option');
+				ele.text=contry[i];
+				typedd.add(ele,i+1);
+			}
+		}
+		function fillss() 
+		{
+			var typedd=document.getElementById("contry");
+			var selectid=typedd.selectedIndex;
+			var datadd=document.getElementById("state");
+			datadd.innerText=null;
+			for(i=0;i<state[selectid-1].length;i++)
+			{
+				var ele=document.createElement('option');
+				ele.text=state[selectid-1][i];
+				datadd.add(ele,i+1);
+			}
+		}
+	
+
+
+	
+	</script>
+	<script src="jquery-3.4.1.min.js" type="text/javascript">
+	</script>
+<script type="text/javascript">
+	
+
+function dobValidate() {
+
+var date= new Date();
+
+var year=date.getFullYear();
+var year=year-18;
+var month=date.getMonth()+1;
+var dd=date.getDate();
+
+if(month<10)
+{
+month='0'+month;
+}
+if(dd<10)
+{
+dd=0+""+dd;
+}
+
+document.getElementById('dob').min=year+"-"+month+"-"+dd;
+
+}
+
+
+</script>
+
+ 
+</script>
+</head>
+<body>
+<h3 align="center">Registration page for employee</h3>
+<center>
+<input type="text" placeholder="Full name" size="60px" required>
+<br>
+<br>
+<input type="email" placeholder="email id" size="60px" required>
+<br>
+<br>
+<input type="password" id="xy" placeholder="create password" size="60px" required>
+<br>
+<br>
+<input type="password" id="ab" placeholder="confirm password" size="60px" required>
+<br>
+<body onload="filldd()">
+<select id="contry" onchange="fillss()">
+<option>education</option>
+</select>
+<select id="state"><option>select degree</option></select>
+<br>
+<p>Date of Birth<input type="Date" id="dob" onclick="dobValidate()"></p>
+
+<br>
+<input type="submit" id="abc" onclick="passval()">
+</center>
+</body>
+</html>
