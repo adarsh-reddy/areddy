@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+		var contry=['india','bang','pak'];
+		var state=[['kar','maha'],['dhaka','bang1'],['karachi','lahore','ravalpindi']];
+		function filldd()
+		{
+			var typedd=document.getElementById("contry");
+			for(i=0;i<contry.length;i++)
+			{
+				var ele=document.createElement('option');
+				ele.text=contry[i];
+				typedd.add(ele,i+1);
+			}
+		}
+		function fillss() 
+		{
+			var typedd=document.getElementById("contry");
+			var selectid=typedd.selectedIndex;
+			var datadd=document.getElementById("state");
+			datadd.innerText=null;
+			for(i=0;i<state[selectid-1].length;i++)
+			{
+				var ele=document.createElement('option');
+				ele.text=state[selectid-1][i];
+				datadd.add(ele,i+1);
+			}
+		}
+	</script>
+</head>
+<body>
+<body onload="filldd()">
+<select id="contry" onchange="fillss()">
+<option>Select country</option>
+</select>
+<select id="state"><option>Select state</option></select>
+</body>
+</html>

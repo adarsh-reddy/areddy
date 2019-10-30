@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+.alias {cursor: alias;}
+.all-scroll {cursor: all-scroll;}
+.auto {cursor: auto;}
+.cell {cursor: cell;}
+.context-menu {cursor: context-menu;}
+.col-resize {cursor: col-resize;}
+.copy {cursor: copy;}
+.crosshair {cursor: crosshair;}
+.e-resize {cursor: e-resize;}
+</style>
+	<script type="text/javascript">
+		function caponly(e)
+		{
+			if(!(e.which>=65&&e.which<=90))
+			{
+				e.preventDefault();
+			}
+		}
+		function alphaonly(e) 
+		{
+			if(!((e.which>=65&&e.which<=90)||(e.which>=97&&e.which<=122)))
+			{
+				e.preventDefault();
+			}
+		}
+		function hideimg()
+		 {
+			document.getElementById("imgg").style.display="none";
+		}
+		function ordinate(e)
+		{
+			var x=event.clientX;
+			var y=event.clientY;
+			var coord="X coordinate:"+x+"Y coordinate:"+y;
+			document.getElementById("demo").innerHTML=coord;
+		}
+		function newwin() 
+		{
+			window.open("https://www.youtube.com/watch?v=iSG3T4rY7kY");
+		}
+		function popup() 
+		{
+			alert("you should not have clicked");
+		}
+		function concat()
+		{
+			var x=document.getElementById("fname").value;
+			var y=document.getElementById("lname").value;
+			alert(x+" "+y);
+		}
+		function dtor() 
+		{
+			var d=prompt("enter d to convert r");
+			var r=d*70;
+			alert(r);
+		}
+
+	</script>
+	
+</head>
+<body>
+enter text in capital letters
+<input type="text" onkeypress="caponly(event)" id="txtnum">
+<input type="submit"><br>
+enter text in alphabets only
+<input type="text" onkeypress="alphaonly(event)" id="alpha">
+<input type="submit"></br>
+</br>
+<p>Mouse over the words to change the mouse cursor.</p>
+
+<p class="alias">alias</p>
+<p class="all-scroll">all-scroll</p>
+<p class="auto">auto</p>
+<p class="cell">cell</p>
+<p class="context-menu">context-menu</p>
+<p class="col-resize">col-resize</p>
+<p class="copy">copy</p>
+<p class="crosshair">crosshair</p>
+<p class="e-resize">e-resize</p>
+<img src="download.jpg" id="imgg" onclick="hideimg()">
+<br>
+<p><b>note:</b>move the cursor to get coordinates of the position</p>
+<p id="demo"></p>
+<h2 onclick="ordinate(event)">click here</h2>
+<p onclick="newwin()">new window</p>
+<p onclick="popup()">click here</p><br>
+firstname<input type="text" name="" id="fname">
+<br>
+lastname<input type="text" name="" id="lname">
+<p onclick="concat()">concat</p>
+<br>
+<button onclick="dtor()">dollar to rupee</button>
+</body>
+</html>

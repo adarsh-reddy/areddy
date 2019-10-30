@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+	thead th{
+		background-color: blue;
+		color: white;
+	}
+	tbody td{
+		background-color: green;
+		color: white;
+		text-align: center;
+	}
+</style>
+<script type="text/javascript">
+	function tablefill() {
+	
+	var student=[["1","virat","IIT","100","8"],
+				["2","shubham","BIT","90","7"]];
+table=document.getElementById("mytable");
+for(var i=0;i<student.length;i++)
+{
+	var newRow=table.insertRow(table.length);
+	for(var j=0;j<student[i].length;j++)
+	{
+		var cell=newRow.insertCell(j);
+		cell.innerHTML=student[i][j];
+	}
+}
+
+
+}
+
+			</script>
+</head>
+<body>
+<table width="50%" align="center" border="10">
+	<thead>
+	<tr>
+		<th>name</th>
+		<th colspan="2">college usn</th>
+	</tr>
+	</thead>
+	<tbody>	
+<tr>
+	<td rowspan="2">adarsh</td>
+	<td>RV 1cs010</td>
+</tr>
+<tr>
+	<td>BIT 1cs011</td>
+</tr>
+	</tbody></table></body>
+<body onload="tablefill()">
+	<input type="button" value="click to fill" onclick="tablefill()">
+	<table id="mytable" border="1">
+		<tr>
+			<td>roll</td>
+			<td>name</td>
+			<td>college</td>
+			<td>marks</td>
+			<td>semester</td>
+		</tr>
+
+		
+	</table>
+
+</body>
+
+</html>

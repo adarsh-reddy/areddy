@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+	img{
+		border-radius: 50%;	
+	}
+	</style>
+	<center>
+	<img src="as-d.jpg" width="30%" alt="Avatar"></center>
+	<script type="text/javascript">
+		function passval() 
+		{
+			var result;
+			var string=document.getElementById("password").value;
+			if(string.match(/[a-z]/g) && string.match(/[A-Z]/g) && string.match(/[0-9]/g) && string.match(
+				/[a-zA-Z]/g) && string.match(/[^a-zA-Z\d]/g) && string.length>=6)
+			{
+				result="password is valid";
+			}
+			else
+			{
+				alert("password is invalid")
+			}
+		}
+
+	</script>
+   
+</head>
+<body>
+	<center>
+	<fieldset style="width: 300px">
+		<legend align="center"> <b>
+		Login	</b>
+		</legend>
+		<input type="text" id="user" align="center" size="60" placeholder="Username">
+		<br>
+	</br>
+<input type="password" id="password" size="60" placeholder="Password">
+<br>
+<input type="submit" id="fill" onclick="passval()">
+</center>
+
+	</fieldset>
+
+</body>
+</html>
